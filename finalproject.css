@@ -1,1 +1,242 @@
-/* CSS declarations go here */
+/* ==== Google font ==== */
+@import url('http://fonts.googleapis.com/css?family=Lato:400,300,700,900');
+@import url('http://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+/* ==== overwrite bootstrap standard ==== */
+
+
+/*==========================================================================
+  General
+  ========================================================================== */
+body {
+  font-family:'Open Sans', Arial, sans-serif;
+  font-size:14px;
+  font-weight:300;
+  line-height:1.6em;
+  color:#656565;
+  overflow-x:hidden;
+  background: -webkit-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* W3C */
+}
+
+p {
+  color:#656565;
+  font-family:'Open Sans', Arial, sans-serif;
+  font-weight:300;
+}
+h1,h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight:500;
+  line-height:1.1em;
+  color:#fff;
+  margin-bottom: 20px;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  line-height:1.1em;
+  color: white;
+}
+
+/* ==== overwrite bootstrap standard ==== */
+.btn {
+  padding: 14px 24px;
+  margin-right: 5px;
+  border: 0 none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+  outline: 0 none;
+}
+
+.btn-primary {
+  background: #0099cc;
+  color: #ffffff;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+  background: #33a6cc;
+}
+
+.btn-primary:active, .btn-primary.active {
+  background: #007299;
+  box-shadow: none;
+}
+
+.btn.outline {
+  background: none;
+  padding: 12px 24px;
+}
+
+.btn-login.outline {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-register.outline {
+  border: 2px solid #fff;
+  color: rgba(255,255,255,0.6);
+}
+
+.btn-login.outline:hover, .btn-login.outline:focus, .btn-login.outline:active, .btn-login.outline.active, .open > .dropdown-toggle.btn-login {
+  color: #649173;
+  border-color: #649173;
+}
+
+.btn-register.outline:hover, .btn-register.outline:focus, .btn-register.outline:active, .btn-register.outline.active, .open > .dropdown-toggle.btn-register {
+  color: #649173;
+  border-color: #649173;
+}
+
+
+/*===========================
+  --- Header & menu ----
+=========================== */
+.main-menu {
+  /*background-color:#242424; */
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* ==== overwrite bootstrap standard ==== */
+.text-center {
+  margin-top: 15%;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-thin {
+  font-style: normal;
+  font-weight: lighter;
+}
+.dropdown ul.nav li a {
+  color:#fff;
+
+
+}
+
+.dropdown ul.nav li a:hover {
+  color:#fff;
+  background-color: rgba(255,255,255,0.2);
+
+}
+
+h1 a.navbar-brand {
+  font-size: 25px;
+  color: #fff;
+  font-weight: 700;
+  text-shadow: none;
+  margin-bottom: 10px;
+  margin-top:-10px;
+}
+
+span {
+  color:#428bca;
+}
+.nav-pills  {
+  float: right;
+  font-weight:800;
+  color:#fff;
+}
+ul.nav-pills  {
+  margin-top:10px;
+  color:fff;
+  padding:5px;
+}
+
+.nav-pills > li > a {
+  border-radius: 0px;
+}
+.nav-pills > li + li {
+  margin-left: 7px;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: rgba(255,255,255,0.2);
+}
+.nav-pills > li.active > a{
+  background-color: rgba(255,255,255,0.2);
+}
+
+.nav-pills > li.active > a:focus {
+  background-color: rgba(255,255,255,0.2);
+}
+
+
+.slider {
+  margin-top:10px;
+  margin-bottom:-30px;
+}
+/* --- section box --- */
+.align-center {
+  text-align: center;
+  margin-top:10px;
+}
+
+#home-content {
+  padding:50px 0;
+  text-align:center;
+  margin-bottom:40px;
+}
+.big-box {
+  margin-bottom:40px;
+}
+
+.align-center:hover  i {
+  color:#000;
+  background-color: rgba(255,255,255,0.2);
+  -webkit-transition-duration: 2s;
+  -moz-transition-duration: 2s;
+  -o-transition-duration: 2s;
+  transition-duration: 2s;
+}
+
+.box-bg {
+  margin-bottom:80px;
+}
+
+.thumbnail {
+  display: block;
+  padding: 4px;
+  margin-top: 70px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+
+/* ===================================
+Responsive media
+==================================== */
+
+.video-container,.map-container,.embed-container 		{ position:relative; margin:0 0 15px 0;	padding-bottom:51%; padding-top:30px; height:0; overflow:hidden; border:none; }
+.embed-container iframe,
+.embed-container object,
+.embed-container embed,
+.video-container iframe,
+.map-container iframe,
+.map-container object,
+.map-container embed,
+.video-container object,
+.video-container embed 					{ position:absolute; top:0; left:0; width:100%; height:100%; }
+iframe {
+  border:none;
+}
+
+img.img-polaroid {
+  margin:0 0 20px 0;
+}
+.img-box {
+  max-width:100%;
+}
