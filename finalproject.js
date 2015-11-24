@@ -2,17 +2,34 @@ Router.route('/', {
   template: 'homecontent'
 });
 
+Router.route('/afterlogin', {
+  template: 'afterlogin'
+});
+
 Router.route('/register');
 Router.route('/login');
 Router.route('/schedule');
 Router.route('/calculator');
+
 
 Router.route('/list/:_id', {
   name: 'listPage',
   template: 'listPage',
   data: function(){
     var currentList = this.params._id;
-    return Lists.findOne({ _id: currentList });
+    var currentUser = Meteor.userId();
+    return Lists.findOne({ _id: currentList, createdBy: currentUser });
+  },
+  onBeforeAction: function() {
+    var currentUser = Meteor.userId();
+    if (currentUser) {
+      // logged-in, if so we use this.next function
+      this.next();
+    }
+    else {
+      // not logged-in, use this.render to render a 'login' template
+      this.render("login");
+    }
   }
 });
 
@@ -66,7 +83,7 @@ if (Meteor.isClient) {
           // function() is to handle errors with login
           console.log(error.reason);
         } else{
-          Router.go('/');
+          Router.go('afterlogin');
         }
       });
     }

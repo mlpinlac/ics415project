@@ -9,16 +9,16 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <h1><a class="navbar-brand" href="index.html" data-0="line-height:90px;" data-300="line-height:50px;">collegePal
+            <h1><a class="navbar-brand" href="index.html" data-0="line-height:90px;" data-300="line-height:50px;">CollegePal
             </a></h1>
           </div>
           <div class="col-md-8">
             <div class="dropdown">
               <ul class="nav nav-pills">
-                <li><a href="/" class="index">Home</a></li>
+                {{#if currentUser}}
+                <li><a href="/afterlogin" class="index">Home</a></li>
                 <li class="active"><a href="/schedule" class="schedule">Schedule</a></li>
                 <li><a href="/calculator" class="calculator">GPA Calculator</a></li>
-                {{#if currentUser}}
                 <li><a href="#" class="logout">Logout</a></li>
                 {{/if}}
               </ul>
@@ -32,6 +32,7 @@
 
 <template name ="todos">
   {{> addTodo}}
+  <br><br>
   <ul>
     {{#each todo}}
     {{> todoItem}}
@@ -45,8 +46,7 @@
 
 <template name="addTodo">
   <form>
-    Create a task:
-    <input type="text" placeholder="Type a task here..." name="todoName">
+    <input type="text" placeholder="Add your classes here" name="todoName">
   </form>
 </template>
 
@@ -67,7 +67,6 @@
 </template>
 
 <template name="listPage">
-  <h2>Tasks: {{name}}</h2>
   {{> todos }}
 </template>
 
