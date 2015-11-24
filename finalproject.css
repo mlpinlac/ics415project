@@ -12,13 +12,13 @@ body {
   font-size:14px;
   font-weight:300;
   line-height:1.6em;
-  color:#656565;
+  color:black;
   overflow-x:hidden;
-  background: -webkit-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* W3C */
+  background: -webkit-linear-gradient(90deg, #1F2C5B 10%, #5A3E7A 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #1F2C5B 10%, #5A3E7A 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #1F2C5B 10%, #5A3E7A 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #1F2C5B 10%, #5A3E7A 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #1F2C5B 10%, #5A3E7A 90%); /* W3C */
 }
 
 p {
@@ -84,13 +84,13 @@ h2, h3, h4, h5, h6 {
 }
 
 .btn-login.outline:hover, .btn-login.outline:focus, .btn-login.outline:active, .btn-login.outline.active, .open > .dropdown-toggle.btn-login {
-  color: #649173;
-  border-color: #649173;
+  color: #101b40;
+  border-color: #101b40;
 }
 
 .btn-register.outline:hover, .btn-register.outline:focus, .btn-register.outline:active, .btn-register.outline.active, .open > .dropdown-toggle.btn-register {
-  color: #649173;
-  border-color: #649173;
+  color: #101b40;
+  border-color: #101b40;
 }
 
 
@@ -99,7 +99,7 @@ h2, h3, h4, h5, h6 {
 =========================== */
 .main-menu {
   /*background-color:#242424; */
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.3);
 }
 
 /* ==== overwrite bootstrap standard ==== */

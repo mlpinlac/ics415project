@@ -46,7 +46,7 @@ if (Meteor.isClient) {
         email: email,
         password: password
       });
-      Router.go('/');
+      Router.go('afterlogin');
     }
   });
 
