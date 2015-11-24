@@ -21,3 +21,7 @@ insecure                # Allow all DB writes from clients (for prototyping)
 less
 twbs:bootstrap
 iron:router
+accounts-password
+accounts-ui
+reactive-var
+semantic:ui
