@@ -18,6 +18,9 @@
                 <li><a href="/" class="index">Home</a></li>
                 <li><a href="/schedule" class="schedule">Schedule</a></li>
                 <li class="active"><a href="/calculator" class="calculator">GPA Calculator</a></li>
+                {{#if currentUser}}
+                <li><a href="#" class="logout">Logout</a></li>
+                {{/if}}
               </ul>
             </div>
           </div>

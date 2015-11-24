@@ -18,6 +18,9 @@
                 <li><a href="/" class="index">Home</a></li>
                 <li class="active"><a href="/schedule" class="schedule">Schedule</a></li>
                 <li><a href="/calculator" class="calculator">GPA Calculator</a></li>
+                {{#if currentUser}}
+                <li><a href="#" class="logout">Logout</a></li>
+                {{/if}}
               </ul>
             </div>
           </div>
@@ -27,9 +30,53 @@
   </header>
 </template>
 
+<template name ="todos">
+  {{> addTodo}}
+  <ul>
+    {{#each todo}}
+    {{> todoItem}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="todoItem">
+  <li>{{name}} [<a href="#" class="delete-todo">Remove</a>]</li>
+</template>
+
+<template name="addTodo">
+  <form>
+    Create a task:
+    <input type="text" placeholder="Type a task here..." name="todoName">
+  </form>
+</template>
+
+<template name="addList">
+  <form>Create a list:
+    <input type="text" placeholder="List name here..." name="listName">
+  </form>
+</template>
+
+<template name="lists">
+  <h2>Lists</h2>
+  {{> addList}}
+  <ul>
+    {{#each list}}
+    <li><a href="{{pathFor route='listPage'}}">{{name}}</a></li>
+    {{/each}}
+  </ul>
+</template>
+
+<template name="listPage">
+  <h2>Tasks: {{name}}</h2>
+  {{> todos }}
+</template>
+
 <template name ="schedule">
   {{> nav2 }}
   <h3>SCHEDULE</h3>
+  {{#if currentUser }}
+  {{> listPage }}
+  {{/if}}
 </template>
 <body>
 
