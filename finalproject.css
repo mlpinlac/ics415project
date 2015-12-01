@@ -278,3 +278,112 @@ img.img-polaroid {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
 }
+
+/* ===================================
+Form Styling
+==================================== */
+
+input[type=email] {
+  background-color: rgba(255,255,255,0.3);
+  border: none;
+  height: 40px;
+  width: 220px;
+  border-radius: 3px;
+  margin-left: 3.1%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14pt;
+  color: white;
+  text-align: center;
+}
+
+.register input[type=email] {
+  background: none;
+  border: 2px solid #fff;
+  color: rgba(255,255,255,0.6);
+  height: 40px;
+  width: 220px;
+  border-radius: 3px;
+  margin-left: 3.1%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14pt;
+  text-align: center;
+}
+
+.register input[type=text] {
+  background: none;
+  border: 2px solid #fff;
+  color: rgba(255,255,255,0.6);
+  height: 40px;
+  width: 220px;
+  border-radius: 3px;
+  margin-left: 0.9%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14pt;
+  text-align: center;
+}
+
+input[type=password] {
+  background-color: rgba(255,255,255,0.3);
+  border: none;
+  height: 40px;
+  width: 220px;
+  border-radius: 3px;
+  margin-left: 0.6%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14pt;
+  color: white;
+  text-align: center;
+}
+
+.register input[type=password] {
+  background: none;
+  border: 2px solid #fff;
+  color: rgba(255,255,255,0.6);
+  height: 40px;
+  width: 220px;
+  border-radius: 3px;
+  margin-left: 0.5%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14pt;
+  text-align: center;
+}
+
+input[type=submit] {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12pt;
+  border-radius: 3px;
+  height: 35px;
+  width: 220px;
+  margin-left: 6.5%;
+  color: white;
+  border: none;
+  text-align: center;
+  background-color: rgba(0,0,0,0.3);
+}
+
+
+
+.emailstyle_login {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10pt;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.passstyle_login {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10pt;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+input.error{
+  background-color:rgba(255, 50, 0, 0.6);
+}
+
+.register input.error{
+  background-color:rgba(255, 50, 0, 0.6);
+}

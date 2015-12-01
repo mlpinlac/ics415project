@@ -17,11 +17,11 @@ Router.route('/list/:_id', {
   template: 'listPage',
   data: function(){
     var currentList = this.params._id;
-    var currentUser = Meteor.userId();
+    var currentUser = Meteor.user().username;
     return Lists.findOne({ _id: currentList, createdBy: currentUser });
   },
   onBeforeAction: function() {
-    var currentUser = Meteor.userId();
+    var currentUser = Meteor.user().username;
     if (currentUser) {
       // logged-in, if so we use this.next function
       this.next();
@@ -40,14 +40,50 @@ if (Meteor.isClient) {
   Template.register.events({
     'submit form': function(event){
       event.preventDefault();
+      /*
+      var username = $('[name=username]').val();
       var email = $('[name=email]').val();
       var password = $('[name=password]').val();
       Accounts.createUser({
+        username: username,
         email: email,
         password: password
       });
       Router.go('afterlogin');
+      */
+
     }
+  });
+
+  Template.register.onRendered(function(){
+    // login template rendered and inserted into DOM
+    $('.register').validate({
+
+      rules: {
+        username: {
+          required: true
+        },
+        email: {
+          required: true
+        },
+        password: {
+          required: true
+        }
+      },
+
+      messages: {
+        username: {
+          required: "Required field",
+        },
+        email: {
+          required: "Required field",
+          email: "Invalid email"
+        },
+        password: {
+          required: "Required field"
+        }
+      }
+    });
   });
 
   Template.nav.events({
@@ -76,6 +112,8 @@ if (Meteor.isClient) {
   Template.login.events({
     'submit form': function(event){
       event.preventDefault();
+
+      /*
       var email = $('[name=email]').val();
       var password = $('[name=password]').val();
       Meteor.loginWithPassword(email, password, function(error){
@@ -86,7 +124,47 @@ if (Meteor.isClient) {
           Router.go('afterlogin');
         }
       });
+      */
     }
+  });
+
+  Template.login.onCreated(function(){
+    console.log("The 'login' template was just created.");
+  });
+
+  Template.login.onRendered(function(){
+    // login template rendered and inserted into DOM
+    $('.login').validate({
+
+      rules: {
+        username: {
+          required: true
+        },
+        email: {
+          required: true
+        },
+        password: {
+          required: true
+        }
+      },
+
+      messages: {
+        username: {
+          required: "Required field",
+        },
+        email: {
+          required: "Required field",
+          email: "Invalid email"
+        },
+        password: {
+          required: "Required field"
+        }
+      }
+    });
+  });
+
+  Template.login.onDestroyed(function(){
+    console.log("The 'login' template was just destroyed.");
   });
 
   Template.todos.helpers({

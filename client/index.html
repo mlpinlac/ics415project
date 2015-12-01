@@ -10,8 +10,13 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
+            {{#if currentUser}}
+            <h1><a class="navbar-brand" href="/afterlogin" data-0="line-height:90px;" data-300="line-height:50px;">CollegePal
+            </a></h1>
+            {{else}}
             <h1><a class="navbar-brand" href="/" data-0="line-height:90px;" data-300="line-height:50px;">CollegePal
             </a></h1>
+            {{/if}}
           </div>
           <div class="col-md-8">
             <div class="dropdown">
@@ -61,7 +66,7 @@
       <div class="col-lg-12">
         <div class="text-center">
           <h1 class="text-bold">
-            Hi, [username] !
+            Hi, {{currentUser.username}}!
           </h1>
           <h4 class="text-thin">
             You can now view or update your schedule <br> and calculate your GPA!

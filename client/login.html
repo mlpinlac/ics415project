@@ -3,13 +3,33 @@
   <title></title>
 </head>
 
-<template name="login">
+<template name="homecontent2">
   {{> nav }}
-  <h2>Login</h2>
+  <div class="home-content">
+    <div class="container">
+      <div class="col-lg-12">
+        <div class="text-center">
+          <h1 class="text-bold">
+            Welcome to CollegePal!
+          </h1>
+            <h4 class="text-thin">
+              Your bff that helps manage your schedule and calculates your GPA
+            </h4>
+          <br>
+          <a href="/login" role="button" class="btn outline btn-login">Login</a>
+          <a href="/register" role="button" class="btn outline btn-register">Register</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="login">
+  {{> homecontent2 }}
   <form class="login">
-    <p>Email: <input type="email" name="email"></p>
-    <p>Password: <input type="password" name="password"></p>
-    <p><input type="submit" value="Login"></p>
+    <p class="emailstyle_login">Email <input type="email" name="email"></p>
+    <p class="passstyle_login">Password <input type="password" name="password"></p>
+    <p class="emailstyle_login"><input type="submit" value="Login"></p>
   </form>
 </template>
 
