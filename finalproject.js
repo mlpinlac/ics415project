@@ -37,6 +37,34 @@ Todos = new Mongo.Collection('todos');
 Lists = new Meteor.Collection('lists');
 
 if (Meteor.isClient) {
+
+  $.validator.setDefaults({
+    rules: {
+      username: {
+        required: true
+      },
+      email: {
+        required: true
+      },
+      password: {
+        required: true
+      }
+    },
+
+    messages: {
+      username: {
+        required: "Required field",
+      },
+      email: {
+        required: "Required field",
+        email: "Invalid email"
+      },
+      password: {
+        required: "Required field"
+      }
+    }
+  });
+
   Template.register.events({
     'submit form': function(event){
       event.preventDefault();
@@ -56,32 +84,26 @@ if (Meteor.isClient) {
   });
 
   Template.register.onRendered(function(){
-    // login template rendered and inserted into DOM
-    $('.register').validate({
-
-      rules: {
-        username: {
-          required: true
-        },
-        email: {
-          required: true
-        },
-        password: {
-          required: true
-        }
-      },
-
-      messages: {
-        username: {
-          required: "Required field",
-        },
-        email: {
-          required: "Required field",
-          email: "Invalid email"
-        },
-        password: {
-          required: "Required field"
-        }
+    // template rendered and inserted into DOM
+    var validator = $('.register').validate({
+      submitHandler: function(event){
+        var username = $('[name=username]').val();
+        var email = $('[name=email]').val();
+        var password = $('[name=password]').val();
+        Accounts.createUser({
+          username: username,
+          email: email,
+          password: password
+        }, function(error){
+          if (error) {
+            validator.showErrors({
+              email: "Email is already a registered user"
+            });
+          }
+          else {
+            Router.go('afterlogin');
+          }
+        });
       }
     });
   });
@@ -134,31 +156,27 @@ if (Meteor.isClient) {
 
   Template.login.onRendered(function(){
     // login template rendered and inserted into DOM
-    $('.login').validate({
+    var validator = $('.login').validate({
+      submitHandler: function(event){
+        var email = $('[name=email]').val();
+        var password = $('[name=password]').val();
+        Meteor.loginWithPassword(email, password, function(error){
+          if(error){
+            if (error.reason == "User not found"){
+              validator.showErrors({
+                email: "Hm, no records of this account."
+              });
+            }
 
-      rules: {
-        username: {
-          required: true
-        },
-        email: {
-          required: true
-        },
-        password: {
-          required: true
-        }
-      },
-
-      messages: {
-        username: {
-          required: "Required field",
-        },
-        email: {
-          required: "Required field",
-          email: "Invalid email"
-        },
-        password: {
-          required: "Required field"
-        }
+            if (error.reason == "Incorrect password"){
+              validator.showErrors({
+                password: "Incorrect password."
+              });
+            }
+          } else{
+            Router.go('afterlogin');
+          }
+        });
       }
     });
   });
