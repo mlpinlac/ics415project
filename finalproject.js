@@ -41,8 +41,10 @@ CalEvent = new Mongo.Collection('calevent');
 
 
 if (Meteor.isClient) {
+
+
   Template.dialog.events({
-    "click.closeDialog":function(event, template){
+    "click .closeDialog":function(event, template){
       Session.set('editing_event', null);
     },
     'click .updateTitle':function(evt,tmp){
@@ -53,11 +55,10 @@ if (Meteor.isClient) {
   });
 
   Template.calendar.helpers({
-    editing_event:function(){
+    editing_event: function(){
       return Session.get('editing_event');
 
     }
-
   });
 
   Template.dialog.helpers({
@@ -74,7 +75,7 @@ if (Meteor.isClient) {
         $('#title').val(calevent.title);
       }
     }
-  };
+  }
 
   Template.calendar.rendered = function(){
 
@@ -99,7 +100,7 @@ if (Meteor.isClient) {
     Deps.autorun(function(){
       CalEvent.find().fetch();
       if(calendar){
-        calendar.refetchEvents();
+        calendar.refetchEvents(); // adds events on click
       }
 
     })
