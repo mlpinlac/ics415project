@@ -37,6 +37,7 @@
 
 <template name ="todos">
   {{> addTodo}}
+  {{> addTime}}
   <br><br>
   <ul>
     {{#each todo}}
@@ -52,6 +53,14 @@
 <template name="addTodo">
   <form>
     <input type="text" placeholder="Add your classes here" name="todoName">
+    <button id="button">Submit</button>
+  </form>
+</template>
+
+<template name="addTime">
+  <form>
+    <input type="text" placeholder="Add class time here" name="todoTime">
+    <button id="timeSubmit">Submit</button>
   </form>
 </template>
 
