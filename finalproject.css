@@ -387,3 +387,15 @@ input.error{
 .register input.error{
   background-color:rgba(255, 50, 0, 0.6);
 }
+
+.grades_and_weights {
+  width: 70%;
+  margin: auto;
+  border: 0;
+  border-spacing: 12px;
+}
+
+.entered_number {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}

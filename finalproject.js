@@ -243,6 +243,8 @@ if (Meteor.isClient) {
       return Lists.find({ createdBy: currentUser }, {sort: {name: 1}});
     }
   });
+
+
 }
 
 if (Meteor.isServer) {
