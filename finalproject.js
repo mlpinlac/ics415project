@@ -38,6 +38,7 @@ Todos = new Mongo.Collection('todos');
 Times = new Mongo.Collection('times');
 Lists = new Meteor.Collection('lists');
 CalEvent = new Mongo.Collection('calevent');
+Images = new Mongo.Collection('images');
 
 
 if (Meteor.isClient) {
@@ -93,10 +94,15 @@ if (Meteor.isClient) {
         Session.set("editing_event", calEvent._id);
 
       },
+      eventDrop:function(reqEvent){
+        Meteor.call('moveEvent', reqEvent);
+    },
       events:function(start,end,callback){
         var calEvents = CalEvent.find({},{reactive:false}).fetch();
         callback(calEvents);
-      }
+      },
+      editable:true,
+      selectable:true
 
     }).data().fullCalendar;
     Deps.autorun(function(){
@@ -336,6 +342,12 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.homecontent.helpers({
+    images: function(){
+      return Images.find();
+    }
+  });
+
 
 }
 
@@ -345,9 +357,17 @@ if (Meteor.isServer) {
     Meteor.methods({
       'saveCalEvent':function(ce){
         CalEvent.insert(ce);
-      },
+        },
       'updateTitle':function(id,title){
         return CalEvent.update({_id:id},{$set:{title:title}});
+      },
+      'moveEvent':function(reqEvent){
+        return CalEvent.update({_id:reqEvent._id}, {
+          $set:{
+            start:reqEvent.start,
+            end: reqEvent.end
+          }
+        })
       }
 
     })

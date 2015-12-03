@@ -399,3 +399,9 @@ input.error{
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
 }
+
+.container-fluid {
+  margin-top: 45%;
+  background-color: rgba(0,0,0,0.3);
+  color: white;
+}

@@ -12,15 +12,18 @@
       Template.inputfields.events({
         'submit form': function(form) {
           form.preventDefault();
-          var gscore = new Array(max_event);
-          var gweight = new Array(max_event);
+          var s1 = form.target.score1.value;
+          var s2 = form.target.score2.value;
+          var s3 = form.target.score3.value;
 
-          for (var i = 1; i < max_event; i++){
-            gscore[i] = "score" + i;
-            gweight[i] = "weight" + i;
-          }
+          var w1= form.target.weight1.value;
+          var w2= form.target.weight2.value;
+          var w3= form.target.weight3.value;
 
-      } // function
+          $('#showresults').append(s1 + " " + s2 + " " + s3 + '</br>');
+          $('#showresults').append(w1 + " " + w2 + " " + w3);
+
+        } // function
 
       });
 
@@ -96,7 +99,7 @@
 
         <tr>
           <td colspan="3">
-            <input type="submit" class="mybutt" name="button" value="Compute">
+            <input type="submit" class="myButton" name="button" value="Compute">
           </td>
         </tr>
 
