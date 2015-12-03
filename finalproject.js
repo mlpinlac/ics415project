@@ -98,7 +98,7 @@ if (Meteor.isClient) {
         Meteor.call('moveEvent', reqEvent);
     },
       events:function(start,end,callback){
-        var calEvents = CalEvent.find({},{reactive:false}).fetch();
+        var calEvents = CalEvent.find({"owner": Meteor.userId()},{reactive:false}).fetch();
         callback(calEvents);
       },
       editable:true,
