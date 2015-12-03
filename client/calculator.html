@@ -1,31 +1,9 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
-  <script type="text/javascript">
 
-   // var weight = '';
-   // var score = '';
-    var max_event = 10;
+  <script src="calculation.js"></script>
 
-    if (Meteor.isClient){
-
-      Template.inputfields.events({
-        'submit form': function(form) {
-          form.preventDefault();
-          var gscore = new Array(max_event);
-          var gweight = new Array(max_event);
-
-          for (var i = 1; i < max_event; i++){
-            gscore[i] = "score" + i;
-            gweight[i] = "weight" + i;
-          }
-
-      } // function
-
-      });
-
-    }
-  </script>
 </head>
 
 <template name = "nav3">
@@ -68,7 +46,7 @@
 
 <template name = "inputfields">
   <div id="formDiv">
-    <form class = "myForm" action=" " method="get">
+    <form class = "myForm" id="myForm" action=" " method="get">
       <table class="table-responsive table maininputs">
         <tr>
           <td><b>Assignment</b></td>
@@ -95,6 +73,48 @@
         </tr>
 
         <tr>
+          <td>4</td>
+          <td><input type="text" name="score4" value=" "></td>
+          <td><input type="text" name="weight4" value=" "></td>
+        </tr>
+
+        <tr>
+          <td>5</td>
+          <td><input type="text" id="score5" name="score2" value=" "></td>
+          <td><input type="text" id="weight5" name="weight2" value=" "></td>
+        </tr>
+
+        <!--<tr>-->
+          <!--<td>6</td>-->
+          <!--<td><input type="text" id="score6" name="score3" value=" "></td>-->
+          <!--<td><input type="text" id="weight6" name="weight3" value=" "></td>-->
+        <!--</tr>-->
+
+        <!--<tr>-->
+          <!--<td>7</td>-->
+          <!--<td><input type="text" name="score7" value=" "></td>-->
+          <!--<td><input type="text" name="weight7" value=" "></td>-->
+        <!--</tr>-->
+
+        <!--<tr>-->
+          <!--<td>8</td>-->
+          <!--<td><input type="text" id="score8" name="score2" value=" "></td>-->
+          <!--<td><input type="text" id="weight8" name="weight2" value=" "></td>-->
+        <!--</tr>-->
+
+        <!--<tr>-->
+          <!--<td>9</td>-->
+          <!--<td><input type="text" id="score9" name="score3" value=" "></td>-->
+          <!--<td><input type="text" id="weight9" name="weight3" value=" "></td>-->
+        <!--</tr>-->
+
+        <!--<tr>-->
+          <!--<td>10</td>-->
+          <!--<td><input type="text" id="score10" name="score3" value=" "></td>-->
+          <!--<td><input type="text" id="weight10" name="weight3" value=" "></td>-->
+        <!--</tr>-->
+
+        <tr>
           <td colspan="3">
             <input type="submit" class="mybutt" name="button" value="Compute">
           </td>
@@ -111,7 +131,7 @@
 
   </div> <!-- formDiv -->
   <div id = "showresults">
-
+    <p id="showMe"></p>
   </div>
 </template>
 
