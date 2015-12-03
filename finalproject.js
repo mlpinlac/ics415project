@@ -48,7 +48,7 @@ if (Meteor.isClient) {
       Session.set('editing_event', null);
     },
     'click .updateTitle':function(evt,tmp){
-      var title = tmpl.find('#title').value;
+      var title = tmp.find('#title').value;
       Meteor.call('updateTitle',Session.get('editing_event'),title);
       Session.set('editing_event', null);
     }
@@ -89,11 +89,13 @@ if (Meteor.isClient) {
         Meteor.call('saveCalEvent',calendarEvent);
       },
       eventClick:function(calEvent,jsEvent,view){
+        console.log(calEvent);
+        Session.set("editing_event", calEvent._id);
 
       },
       events:function(start,end,callback){
         var calEvents = CalEvent.find({},{reactive:false}).fetch();
-        callback(calEvents)
+        callback(calEvents);
       }
 
     }).data().fullCalendar;

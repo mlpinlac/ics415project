@@ -9,7 +9,11 @@
 
 <template name = "calendar">
     {{> nav2 }}
+
     <div class = "container">
+        {{#if editing_event}}
+            {{> dialog }}
+        {{/if}}
         <div id = "calendar"></div>
 
     </div>
