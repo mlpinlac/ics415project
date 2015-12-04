@@ -102,7 +102,8 @@ if (Meteor.isClient) {
         callback(calEvents);
       },
       editable:true,
-      selectable:true
+      selectable:true,
+      theme: false
 
     }).data().fullCalendar;
     Deps.autorun(function(){
@@ -110,7 +111,6 @@ if (Meteor.isClient) {
       if(calendar){
         calendar.refetchEvents(); // adds events on click
       }
-
     })
 
   }

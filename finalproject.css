@@ -406,12 +406,21 @@ input.error{
 }
 
 #myDiv {
-  margin-top: 40%;
+  margin-top: 52%;
   width: 100%;
-  padding: 7% 0% 18%  0%;
+  padding: 7% 0% 10%  0%;
   align-content: center;
   margin-right: 0px;
   margin-left: 0px;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(255,255,255,0.6);
   color: white;
+}
+
+.fc-today {
+  background: #f0ad4e;
+}
+
+
+.fc-divider{
+  border-color: #ddd;
 }
