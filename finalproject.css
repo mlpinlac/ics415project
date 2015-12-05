@@ -102,7 +102,7 @@ h2, h3, h4, h5, h6 {
 =========================== */
 .main-menu {
   /*background-color:#242424; */
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.5);
 }
 
 /* ==== overwrite bootstrap standard ==== */
@@ -406,21 +406,76 @@ input.error{
 }
 
 #myDiv {
-  margin-top: 52%;
+  margin-top: 54%;
   width: 100%;
   padding: 7% 0% 10%  0%;
   align-content: center;
   margin-right: 0px;
   margin-left: 0px;
-  background-color: rgba(255,255,255,0.6);
-  color: white;
+  background-color: rgba(255,255,255,0.8);
+  color: #F26E00;
 }
 
 .fc-today {
-  background: #f0ad4e;
+  background-color: rgba(255,255,255,0.5);
 }
 
-
 .fc-divider{
-  border-color: #ddd;
+  border-color: #000;
+  border-width: 10px;
+}
+
+.fc-event,
+.fc-event-inner,
+.fc-event-hori,
+.fc-event-draggable,
+.fc-event-start,
+.fc-event-end,
+.ui-draggable
+{
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(101,219,215);
+}
+
+.fc-event-title{
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+}
+
+.fc-border-separate,
+.fc-view,
+.fc-view-month,
+.fc-grid{
+  border-color: #000;
+}
+
+tr.fc-first.fc-last{
+  background-color: rgba(0,0,0,0.5);
+  border:none;
+}
+
+input.inputs{
+  border: 2px solid #fff;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  font-family: 'Montserrat', sans-serif;
+  color: #c6b5dd;
+}
+
+table.maininputs{
+  text-align: center;
+}
+
+thead,
+td{
+  font-family: 'Montserrat', sans-serif;
+  color: #c6b5dd;
+}
+
+input.mybutt{
+  text-align: center;
+  margin-right:23px;
+  width: 180px;
 }

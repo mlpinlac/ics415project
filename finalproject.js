@@ -46,6 +46,8 @@ if (Meteor.isClient) {
 
   Template.dialog.events({
     "click .closeDialog":function(event, template){
+     // var title = event.find('#title').value;
+      //$('#calendar').fullCalendar('removeEvents',title);
       Session.set('editing_event', null);
     },
     'click .updateTitle':function(evt,tmp){

@@ -6,23 +6,23 @@
 
 <template name = "nav">
   <header>
-    <div class="main-menu">
+    <nav class="main-menu navbar navbar-fixed-top">
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            {{#if currentUser}}
-            <h1><a class="navbar-brand" href="/afterlogin" data-0="line-height:90px;" data-300="line-height:50px;">CollegePal
-            </a></h1>
-            {{else}}
-            <h1><a class="navbar-brand" href="/" data-0="line-height:90px;" data-300="line-height:50px;">CollegePal
-            </a></h1>
-            {{/if}}
+              {{#if currentUser}}
+              <h1><a class="navbar-brand" href="/afterlogin" data-0="line-height:90px;" data-300="line-height:50px;">LifeVest
+              </a></h1>
+              {{else}}
+              <h1><a class="navbar-brand" href="/" data-0="line-height:90px;" data-300="line-height:50px;">LifeVest
+              </a></h1>
+              {{/if}}
           </div>
           <div class="col-md-8">
             <div class="dropdown">
               <ul class="nav nav-pills">
                 {{#if currentUser}}
-                <li class="active"><a href="/" class="index">Home</a></li>
+                <li class="active"><a href="/afterlogin" class="index">Home</a></li>
                 <li><a href="/calendar" class="schedule">Calendar</a></li>
                 <li><a href="/calculator" class="calculator">Grade Calculator</a></li>
                 <li><a href="#" class="logout">Logout</a></li>
@@ -32,7 +32,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   </header>
 </template>
 
@@ -43,11 +43,11 @@
       <div class="col-lg-12">
         <div class="text-center">
           <h1 class="text-bold">
-            Welcome to CollegePal!
+            Welcome to LifeVest!
           </h1>
           <div class="animated fadeInDown">
             <h4 class="text-thin">
-              Your bff that helps manage your schedule and calculates your GPA
+              A college students life saver for managing their schedule and grades.
             </h4>
           </div>
           <br>
@@ -55,40 +55,43 @@
           <a href="/register" role="button" class="btn outline btn-register">Register</a>
         </div>
       </div>
+      {{> about }}
+    </div>
+  </div>
+</template>
 
-      <div id="myDiv" class="container-fluid jumbotron">
-        <div class="row">
-          <div class="col-lg-12">
-            <h1 style="text-align: center">Technology</h1>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12">
-            <img class="img-responsive" style="margin-left: auto; margin-right: auto; justify-content: center" src="/img/Meteor-logo.png"/>
-            <div class="showhide">
-              <h3 style="text-align: center">FullCalendar, IronRouter, jQuery, Bootstrap, Accounts Password/UI, Lessmeteor</h3>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12">
-            <br>
-            <img class="img-responsive" style="width: 30%; margin-left: auto; margin-right: auto; justify-content: center" src="/img/html5css3badges.png"/>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12">
-            <br><br>
-            <h1 style="text-align: center">Collaborators</h1>
-            <h2 style="text-align: center">Michelle, Chase, Adam</h2>
-          </div>
-        </div>
-
+<template name="about">
+  <div id="myDiv" class="container-fluid jumbotron">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 style="text-align: center">Technology</h1>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <img class="img-responsive" style="margin-left: auto; margin-right: auto; justify-content: center" src="/img/Meteor-logo.png"/>
+        <div class="showhide">
+          <h3 style="color: #000; text-align: center">FullCalendar, IronRouter, jQuery, Bootstrap, Accounts Password/UI, Lessmeteor</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <br>
+        <img class="img-responsive" style="width: 30%; margin-left: auto; margin-right: auto; justify-content: center" src="/img/html5css3badges.png"/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <br><br>
+        <h1 style="text-align: center">Collaborators</h1>
+        <h2 style="color: black; text-align: center">Michelle, Chase, Adam</h2>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -102,7 +105,7 @@
             Hi, {{currentUser.username}}!
           </h1>
           <h4 class="text-thin">
-            You can now view or update your schedule <br> and calculate your GPA!
+            A calendar and grade calculator all-in-one,<br>managing your college life has never been easier.
           </h4>
         </div>
       </div>

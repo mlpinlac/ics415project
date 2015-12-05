@@ -25,8 +25,8 @@
               <ul class="nav nav-pills">
                 {{#if currentUser}}
                 <li><a href="/afterlogin" class="index">Home</a></li>
-                <li><a href="/calendar" class="schedule">Schedule</a></li>
-                <li class="active"><a href="/calculator" class="calculator">GPA Calculator</a></li>
+                <li><a href="/calendar" class="schedule">Calendar</a></li>
+                <li class="active"><a href="/calculator" class="calculator">Grade Calculator</a></li>
                 <li><a href="#" class="logout">Logout</a></li>
                 {{/if}}
               </ul>
@@ -40,48 +40,54 @@
 
 <template name ="calculator">
   {{> nav3 }}
-  <h3>CALCULATOR</h3>
+  <h2 style="text-align: center">Worried about passing a class?</h2>
+  <h4 style="text-align: center">We've got you covered. Input your grade on each assignment and weight on your <br>overall grade (out of 100%), and <i>may the odds be ever in your favor.</i></h4>
+  <br>
+  <br>
   {{> inputfields }}
 </template>
 
 <template name = "inputfields">
-  <div id="formDiv">
+  <div class="container" id="formDiv">
     <form class = "myForm" id="myForm" action=" " method="get">
-      <table class="table-responsive table maininputs">
-        <tr>
-          <td><b>Assignment</b></td>
-          <td><b>Score</b></td>
-          <td><b>Weight (%)</b></td>
-        </tr>
+      <table class="table maininputs">
 
+        <thead>
         <tr>
+          <td colspan="1"><b>Assignment</b></td>
+          <td colspan="1"><b>Score</b></td>
+          <td colspan="1"><b>Weight (%)</b></td>
+        </tr>
+        </thead>
+
+        <tr style="border:none">
           <td>1</td>
-          <td><input type="text" name="score1" value=" "></td>
-          <td><input type="text" name="weight1" value=" "></td>
+          <td><input class="inputs" type="text" name="score1" value=" "></td>
+          <td><input class="inputs" type="text" name="weight1" value=" "></td>
         </tr>
 
-        <tr>
+        <tr style="border:none">
           <td>2</td>
-          <td><input type="text" id="score2" name="score2" value=" "></td>
-          <td><input type="text" id="weight2" name="weight2" value=" "></td>
+          <td><input class="inputs" type="text" id="score2" name="score2" value=" "></td>
+          <td><input class="inputs" type="text" id="weight2" name="weight2" value=" "></td>
         </tr>
 
         <tr>
           <td>3</td>
-          <td><input type="text" id="score3" name="score3" value=" "></td>
-          <td><input type="text" id="weight3" name="weight3" value=" "></td>
+          <td><input class="inputs" type="text" id="score3" name="score3" value=" "></td>
+          <td><input class="inputs" type="text" id="weight3" name="weight3" value=" "></td>
         </tr>
 
         <tr>
           <td>4</td>
-          <td><input type="text" name="score4" value=" "></td>
-          <td><input type="text" name="weight4" value=" "></td>
+          <td><input class="inputs" type="text" name="score4" value=" "></td>
+          <td><input class="inputs" type="text" name="weight4" value=" "></td>
         </tr>
 
         <tr>
           <td>5</td>
-          <td><input type="text" id="score5" name="score2" value=" "></td>
-          <td><input type="text" id="weight5" name="weight2" value=" "></td>
+          <td><input class="inputs" type="text" id="score5" name="score2" value=" "></td>
+          <td><input class="inputs" type="text" id="weight5" name="weight2" value=" "></td>
         </tr>
 
         <!--<tr>-->
@@ -115,8 +121,22 @@
         <!--</tr>-->
 
         <tr>
-          <td colspan="3">
-            <input type="submit" class="mybutt" name="button" value="Compute">
+          <td>
+
+          </td>
+
+          <td>
+
+          </td>
+
+          <td>
+            <br>
+            <br>
+            <input type="submit" class="mybutt btn-success" name="button" value="Compute">
+          </td>
+
+          <td>
+
           </td>
         </tr>
 
