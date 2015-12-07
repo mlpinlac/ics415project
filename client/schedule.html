@@ -5,30 +5,32 @@
 
 <template name = "nav2">
   <header>
-    <div class="main-menu fontChange">
+    <div class="navbar navbar-inverse navbar-static-top">
       <div class="container">
-        <div class="row">
-          <div class="col-md-4">
+        {{#if currentUser}}
+        <h1><a class="navbar-brand" href="/afterlogin" data-0="line-height:90px;" data-300="line-height:50px;">LifeVest
+        </a></h1>
+        {{else}}
+        <h1><a class="navbar-brand" href="/" data-0="line-height:90px;" data-300="line-height:50px;">LifeVest
+        </a></h1>
+        {{/if}}
+
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <div class="collapse navbar-collapse navHeaderCollapse">
+          <ul class="nav navbar-nav navbar-right">
             {{#if currentUser}}
-            <h1><a class="navbar-brand" href="/afterlogin" data-0="line-height:90px;" data-300="line-height:50px;">LifeVest
-            </a></h1>
-            {{else}}
-            <h1><a class="navbar-brand" href="/" data-0="line-height:90px;" data-300="line-height:50px;">LifeVest
-            </a></h1>
+            <li><a href="/afterlogin" class="index">Home</a></li>
+            <li class="active"><a href="/calendar" class="schedule">Calendar</a></li>
+            <li><a href="/calculator" class="calculator">Grade Calculator</a></li>
+            <li><a href="#" class="logout">Logout</a></li>
             {{/if}}
-          </div>
-          <div class="col-md-8">
-            <div class="dropdown">
-              <ul class="nav nav-pills">
-                {{#if currentUser}}
-                <li><a href="/afterlogin" class="index">Home</a></li>
-                <li class="active"><a href="/calendar" class="schedule">Calendar</a></li>
-                <li><a href="/calculator" class="calculator">Grade Calculator</a></li>
-                <li><a href="#" class="logout">Logout</a></li>
-                {{/if}}
-              </ul>
-            </div>
-          </div>
+          </ul>
         </div>
       </div>
     </div>

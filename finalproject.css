@@ -472,6 +472,7 @@ thead,
 td{
   font-family: 'Montserrat', sans-serif;
   color: #c6b5dd;
+  font-size: 14px;
 }
 
 input.mybutt{
@@ -484,12 +485,16 @@ input.mybutt{
   display: none;
 }
 
+.navbar-inverse,
 .navbar,
-.navbar-fixed-top
+.navbar-fixed-top,
+.navbar-static-top
 {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
+  background-color: rgba(0,0,0,0.5);
 }
+
 
 h1.myStyle{
   font-size: 50px;
@@ -499,3 +504,14 @@ h1.myStyle{
 .fontChange{
   font-family: 'Montserrat', sans-serif;
 }
+
+p#showMe{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  color: #c6b5dd;
+}
+
+#showresults{
+  text-align: center;
+}
+

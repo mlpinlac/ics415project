@@ -43,7 +43,7 @@ if (Meteor.isClient){
 
         gpa = gpa / 100;
 
-        document.getElementById("showMe").innerHTML = gpa.toString() + "%";
+        document.getElementById("showMe").innerHTML = "Based on your inputs, your<br>overall grade is a " + gpa.toString() + "%";
 
       }
     } // function
