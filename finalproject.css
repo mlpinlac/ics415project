@@ -412,7 +412,7 @@ input.error{
   align-content: center;
   margin-right: 0px;
   margin-left: 0px;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,0.9);
   color: #F26E00;
 }
 
@@ -478,4 +478,24 @@ input.mybutt{
   text-align: center;
   margin-right:23px;
   width: 180px;
+}
+
+.showhide {
+  display: none;
+}
+
+.navbar,
+.navbar-fixed-top
+{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+h1.myStyle{
+  font-size: 50px;
+  color: #c6b5dd;
+}
+
+.fontChange{
+  font-family: 'Montserrat', sans-serif;
 }

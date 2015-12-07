@@ -8,15 +8,15 @@
 
 <template name = "nav3">
   <header>
-    <div class="main-menu">
+    <div class="main-menu fontChange">
       <div class="container">
         <div class="row">
           <div class="col-md-4">
             {{#if currentUser}}
-            <h1><a class="navbar-brand" href="/afterlogin" data-0="line-height:90px;" data-300="line-height:50px;">CollegePal
+            <h1><a class="navbar-brand" href="/afterlogin" data-0="line-height:90px;" data-300="line-height:50px;">LifeVest
             </a></h1>
             {{else}}
-            <h1><a class="navbar-brand" href="/" data-0="line-height:90px;" data-300="line-height:50px;">CollegePal
+            <h1><a class="navbar-brand" href="/" data-0="line-height:90px;" data-300="line-height:50px;">LifeVest
             </a></h1>
             {{/if}}
           </div>
@@ -40,8 +40,8 @@
 
 <template name ="calculator">
   {{> nav3 }}
-  <h2 style="text-align: center">Worried about passing a class?</h2>
-  <h4 style="text-align: center">We've got you covered. Input your grade on each assignment and weight on your <br>overall grade (out of 100%), and <i>may the odds be ever in your favor.</i></h4>
+    <h2 style="text-align: center">Worried about passing a class?</h2>
+    <h4 style="text-align: center">We've got you covered. Input your grade on each assignment and weight on your <br>overall grade (out of 100%), and <i>may the odds be ever in your favor.</i></h4>
   <br>
   <br>
   {{> inputfields }}

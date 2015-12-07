@@ -2,6 +2,17 @@
   <meta charset="UTF-8">
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    if(Meteor.isClient){
+      $(function(){
+        Template.about.events({
+          'click #here':function(event){
+            $('.showhide').show();
+          }
+        });
+      });
+    }
+  </script>
 </head>
 
 <template name = "nav">
@@ -70,7 +81,7 @@
 
     <div class="row">
       <div class="col-lg-12">
-        <img class="img-responsive" style="margin-left: auto; margin-right: auto; justify-content: center" src="/img/Meteor-logo.png"/>
+        <img id="here" class="img-responsive" style="margin-left: auto; margin-right: auto; justify-content: center" src="/img/Meteor-logo.png"/>
         <div class="showhide">
           <h3 style="color: #000; text-align: center">FullCalendar, IronRouter, jQuery, Bootstrap, Accounts Password/UI, Lessmeteor</h3>
         </div>
@@ -79,7 +90,7 @@
 
     <div class="row">
       <div class="col-lg-12">
-        <br>
+        <br><br><br>
         <img class="img-responsive" style="width: 30%; margin-left: auto; margin-right: auto; justify-content: center" src="/img/html5css3badges.png"/>
       </div>
     </div>
@@ -101,12 +112,12 @@
     <div class="container-fluid">
       <div class="col-lg-12">
         <div class="text-center">
-          <h1 class="text-bold">
+          <h1 class="text-bold myStyle">
             Hi, {{currentUser.username}}!
           </h1>
-          <h4 class="text-thin">
+          <h2 class="text-thin">
             A calendar and grade calculator all-in-one,<br>managing your college life has never been easier.
-          </h4>
+          </h2>
         </div>
       </div>
     </div>
